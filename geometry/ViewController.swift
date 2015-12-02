@@ -9,10 +9,41 @@
 import UIKit
 
 class ViewController: UIViewController {
-
+    var arr=[]
+    @IBAction func loadTriangle(sender: UIButton) {
+        var myDict: NSDictionary?
+        if let path = NSBundle.mainBundle().pathForResource("data", ofType: "plist") {
+            myDict = NSDictionary(contentsOfFile: path)
+        }
+        if let dict = myDict {
+            print("1", [myDict?.valueForKey("x1")] )
+            print("2", [myDict?.valueForKey("y1")] )
+            print("кол-во", [myDict?.count] )
+            //arr[0]=myDict?.valueForKey("x1")
+            myDict?.valueForKey("y1")
+            myDict?.valueForKey("x2")
+            
+            for var i = 1; i <= myDict?.count; i++ {
+                arr[]=myDict?.mutableArrayValueForKey(i)
+                
+            }
+            
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        
         // Do any additional setup after loading the view.
     }
 
