@@ -9,11 +9,11 @@
 import UIKit
 
 class tView: UIView {
-
+    
         override func drawRect(rect: CGRect)
         {
             
-            /* Set the color that we want to use to draw the line */
+            
             UIColor.greenColor().set()
             /* Get the current graphics context */
             let context = UIGraphicsGetCurrentContext()

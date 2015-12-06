@@ -10,18 +10,21 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    public var point=[]
+    
     @IBAction func loadTriangle(sender: UIButton) {
         var myDict: NSDictionary?
-        if let path = NSBundle.mainBundle().pathForResource("data", ofType: "plist") {
+        if let path = NSBundle.mainBundle().pathForResource("data2", ofType: "plist") {
             myDict = NSDictionary(contentsOfFile: path)
         }
         if let dict = myDict {
-            print("1", [myDict?.valueForKey("x1")] )
-            print("2", [myDict?.valueForKey("y1")] )
+            print("1", [myDict?.valueForKey("x")] )
+            print("2", [myDict?.valueForKey("y")] )
             print("dict size", [myDict?.count] )
 
             for (key, value) in dict {
                 print("\(key): \(value)")
+                point = Cordinate(x: dict.objectForKey("x").objectForKey(0), y: 2)
             }
         }
     }
