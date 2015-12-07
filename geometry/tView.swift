@@ -20,7 +20,7 @@ class tView: UIView {
             /* Set the width for the line */
             CGContextSetLineWidth(context, 3)
             
-            CGContextMoveToPoint(context,100, 50)
+            CGContextMoveToPoint(context,xID[0,0], 50)
             CGContextAddLineToPoint(context, 100, 200)
             
             CGContextMoveToPoint(context, 100, 200)

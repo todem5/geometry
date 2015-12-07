@@ -8,9 +8,12 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+let XKey = "x"
+let YKey = "y"
+public var xID = [0,0]
+public var yID = [0,0]
 
-    public var point=[]
+class ViewController: UIViewController {
     
     @IBAction func loadTriangle(sender: UIButton) {
         var myDict: NSDictionary?
@@ -24,7 +27,9 @@ class ViewController: UIViewController {
 
             for (key, value) in dict {
                 print("\(key): \(value)")
-                point = Cordinate(x: dict.objectForKey("x").objectForKey(0), y: 2)
+                xID = dict.objectForKey(XKey)! as! [Int]
+                yID = dict.objectForKey(YKey)! as! [Int]
+                print("\(xID): \(yID)")
             }
         }
     }
