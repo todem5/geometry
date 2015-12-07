@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		2807CACF1C149330003ACCDE /* data2.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2807CACE1C149330003ACCDE /* data2.plist */; };
+		280B150A1C15928900C69DC4 /* TrianglesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280B15091C15928900C69DC4 /* TrianglesProtocol.swift */; };
 		2853B9C11C0C15C4008DD274 /* data.plist in Resources */ = {isa = PBXBuildFile; fileRef = 2853B9BE1C0C15C3008DD274 /* data.plist */; };
 		2853B9C21C0C15C4008DD274 /* tView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853B9BF1C0C15C4008DD274 /* tView.swift */; };
 		2853B9C71C0C175A008DD274 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2853B9C61C0C175A008DD274 /* ViewController.swift */; };
@@ -38,6 +39,7 @@
 
 /* Begin PBXFileReference section */
 		2807CACE1C149330003ACCDE /* data2.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data2.plist; sourceTree = "<group>"; };
+		280B15091C15928900C69DC4 /* TrianglesProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrianglesProtocol.swift; sourceTree = "<group>"; };
 		2853B9BE1C0C15C3008DD274 /* data.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = data.plist; sourceTree = "<group>"; };
 		2853B9BF1C0C15C4008DD274 /* tView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = tView.swift; sourceTree = "<group>"; };
 		2853B9C61C0C175A008DD274 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				7D75BB0A1C061CC0009B7521 /* AppDelegate.swift */,
 				2853B9BF1C0C15C4008DD274 /* tView.swift */,
 				2853B9C61C0C175A008DD274 /* ViewController.swift */,
+				280B15091C15928900C69DC4 /* TrianglesProtocol.swift */,
 				7D75BB0E1C061CC0009B7521 /* Main.storyboard */,
 				7D75BB111C061CC0009B7521 /* Assets.xcassets */,
 				7D75BB131C061CC0009B7521 /* LaunchScreen.storyboard */,
@@ -268,6 +271,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2853B9C71C0C175A008DD274 /* ViewController.swift in Sources */,
+				280B150A1C15928900C69DC4 /* TrianglesProtocol.swift in Sources */,
 				2853B9C21C0C15C4008DD274 /* tView.swift in Sources */,
 				7D75BB0B1C061CC0009B7521 /* AppDelegate.swift in Sources */,
 			);

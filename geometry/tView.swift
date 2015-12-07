@@ -9,28 +9,38 @@
 import UIKit
 
 class tView: UIView {
+    private var dataSource: TrianglesProtocol?
     
-        override func drawRect(rect: CGRect)
-        {
+    override func drawRect(rect: CGRect) {
+        UIColor.greenColor().set()
+        let context = UIGraphicsGetCurrentContext()
+        CGContextSetLineWidth(context, 3)
+        
+        if let trianglesDict = dataSource?.getTriangles(){
+            CGContextMoveToPoint(context, (trianglesDict["first"]!["x"] as! CGFloat), (trianglesDict["first"]!["y"] as! CGFloat))
+
+            for (_,value) in trianglesDict {
+                CGContextAddLineToPoint(context, (value["x"] as! CGFloat), (value["y"] as! CGFloat))
+                CGContextMoveToPoint(context, (value["x"] as! CGFloat), (value["y"] as! CGFloat))
+
+                
             
             
-            UIColor.greenColor().set()
-            /* Get the current graphics context */
-            let context = UIGraphicsGetCurrentContext()
-            /* Set the width for the line */
-            CGContextSetLineWidth(context, 3)
+            //CGContextMoveToPoint(context, 100, 200)
             
-            CGContextMoveToPoint(context,xID[0,0], 50)
-            CGContextAddLineToPoint(context, 100, 200)
-            
-            CGContextMoveToPoint(context, 100, 200)
-            CGContextAddLineToPoint(context, 200, 200)
-            
-            CGContextMoveToPoint(context, 200, 200)
-            CGContextAddLineToPoint(context, 150, 50)
-            
-            CGContextStrokePath(context)
+            }
         }
         
+        
+        
+        
+        
+        
+        CGContextStrokePath(context)
+    }
+    
+    func setDataSource(dataSource: TrianglesProtocol) {
+        self.dataSource = dataSource
+    }
         
 }
