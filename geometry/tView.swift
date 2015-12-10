@@ -22,21 +22,10 @@ class tView: UIView {
             for (_,value) in trianglesDict {
                 CGContextAddLineToPoint(context, (value["x"] as! CGFloat), (value["y"] as! CGFloat))
                 CGContextMoveToPoint(context, (value["x"] as! CGFloat), (value["y"] as! CGFloat))
-
-                
-            
-            
-            //CGContextMoveToPoint(context, 100, 200)
-            
             }
+            CGContextAddLineToPoint(context, (trianglesDict["first"]!["x"] as! CGFloat), (trianglesDict["first"]!["y"] as! CGFloat))
         }
-        
-        
-        
-        
-        
-        
-        CGContextStrokePath(context)
+          CGContextStrokePath(context)
     }
     
     func setDataSource(dataSource: TrianglesProtocol) {
