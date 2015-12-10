@@ -8,41 +8,26 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, TrianglesProtocol {
+    private var trianglesDict: [String: AnyObject]?
+    
     @IBAction func loadTriangle(sender: UIButton) {
-        var myDict: NSDictionary?
-        if let path = NSBundle.mainBundle().pathForResource("data", ofType: "plist") {
-            myDict = NSDictionary(contentsOfFile: path)
-        }
-        if let dict = myDict {
-            print("1", [myDict?.valueForKey("x1")] )
-            print("2", [myDict?.valueForKey("y1")] )
-            print("dict size", [myDict?.count] )
-
-            for (key, value) in dict {
-                print("\(key): \(value)")
+        if let path = NSBundle.mainBundle().pathForResource("data2", ofType: "plist") {
+            if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
+                trianglesDict = dict
             }
         }
+        self.view.setNeedsDisplay()
+    }
+    
+    func getTriangles() -> NSDictionary? {
+        return trianglesDict
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        (self.view as! tView).setDataSource(self)
         // Do any additional setup after loading the view.
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+   
 }
