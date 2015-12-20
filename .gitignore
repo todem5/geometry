@@ -1,0 +1,6 @@
+# folder logs
+geometryTests/
+geometryUITests/
+
+# files
+geometry.xcodeproj

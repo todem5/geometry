@@ -8,7 +8,7 @@
 
 import UIKit
 
-class tView: UIView {
+class TrianglesView: UIView {
     private var dataSource: TrianglesProtocol?
     
     override func drawRect(rect: CGRect) {
