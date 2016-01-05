@@ -2,26 +2,77 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>first</key>
+	<key>1</key>
 	<dict>
-		<key>x</key>
-		<integer>50</integer>
-		<key>y</key>
-		<integer>50</integer>
+		<key>first</key>
+		<dict>
+			<key>x</key>
+			<integer>50</integer>
+			<key>y</key>
+			<integer>50</integer>
+		</dict>
+		<key>second</key>
+		<dict>
+			<key>x</key>
+			<integer>100</integer>
+			<key>y</key>
+			<integer>50</integer>
+		</dict>
+		<key>third</key>
+		<dict>
+			<key>x</key>
+			<integer>100</integer>
+			<key>y</key>
+			<integer>150</integer>
+		</dict>
 	</dict>
-	<key>second</key>
+	<key>2</key>
 	<dict>
-		<key>x</key>
-		<integer>100</integer>
-		<key>y</key>
-		<integer>50</integer>
+		<key>first</key>
+		<dict>
+			<key>x</key>
+			<integer>150</integer>
+			<key>y</key>
+			<integer>150</integer>
+		</dict>
+		<key>second</key>
+		<dict>
+			<key>x</key>
+			<integer>250</integer>
+			<key>y</key>
+			<integer>150</integer>
+		</dict>
+		<key>third</key>
+		<dict>
+			<key>x</key>
+			<integer>200</integer>
+			<key>y</key>
+			<integer>200</integer>
+		</dict>
 	</dict>
-	<key>third</key>
+	<key>3</key>
 	<dict>
-		<key>x</key>
-		<integer>100</integer>
-		<key>y</key>
-		<integer>150</integer>
+		<key>first</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+		</dict>
+		<key>second</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+		</dict>
+		<key>third</key>
+		<dict>
+			<key>x</key>
+			<integer>0</integer>
+			<key>y</key>
+			<integer>0</integer>
+		</dict>
 	</dict>
 </dict>
 </plist>

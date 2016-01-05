@@ -17,13 +17,18 @@ class TrianglesView: UIView {
         CGContextSetLineWidth(context, 3)
         
         if let trianglesDict = dataSource?.getTriangles(){
-            CGContextMoveToPoint(context, (trianglesDict["first"]!["x"] as! CGFloat), (trianglesDict["first"]!["y"] as! CGFloat))
-
-            for (_,value) in trianglesDict {
-                CGContextAddLineToPoint(context, (value["x"] as! CGFloat), (value["y"] as! CGFloat))
-                CGContextMoveToPoint(context, (value["x"] as! CGFloat), (value["y"] as! CGFloat))
+            CGContextMoveToPoint(context, (trianglesDict["1"]!["first"]!!["x"] as! CGFloat), (trianglesDict["1"]!["first"]!!["y"] as! CGFloat))
+            
+            
+            for key : AnyObject in trianglesDict.allKeys{
+                let stringKey: String = key as! String
+                if let _ : AnyObject = trianglesDict.valueForKey(stringKey) {
+                        
+                }
+                
             }
-            CGContextAddLineToPoint(context, (trianglesDict["first"]!["x"] as! CGFloat), (trianglesDict["first"]!["y"] as! CGFloat))
+
+            
         }
           CGContextStrokePath(context)
     }
