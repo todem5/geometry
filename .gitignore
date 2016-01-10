@@ -1,9 +1,5 @@
 # folder logs
-geometryTests/
-geometryUITests/
-geometry.xcodeproj
 project.pbxproj
 
 # files
-geometry.xcodeproj
 UserInterfaceState.xcuserstate

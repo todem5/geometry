@@ -18,16 +18,25 @@ class TrianglesView: UIView {
         
         if let trianglesDict = dataSource?.getTriangles(){
             CGContextMoveToPoint(context, (trianglesDict["1"]!["first"]!!["x"] as! CGFloat), (trianglesDict["1"]!["first"]!!["y"] as! CGFloat))
+            CGContextAddLineToPoint(context, (trianglesDict["1"]!["second"]!!["x"] as! CGFloat), (trianglesDict["1"]!["second"]!!["y"] as! CGFloat))
+            CGContextMoveToPoint(context, (trianglesDict["1"]!["second"]!!["x"] as! CGFloat), (trianglesDict["1"]!["second"]!!["y"] as! CGFloat))
+            CGContextAddLineToPoint(context, (trianglesDict["1"]!["third"]!!["x"] as! CGFloat), (trianglesDict["1"]!["third"]!!["y"] as! CGFloat))
+            CGContextMoveToPoint(context, (trianglesDict["1"]!["third"]!!["x"] as! CGFloat), (trianglesDict["1"]!["third"]!!["y"] as! CGFloat))
+            CGContextAddLineToPoint(context, (trianglesDict["1"]!["first"]!!["x"] as! CGFloat), (trianglesDict["1"]!["first"]!!["y"] as! CGFloat))
             
+            CGContextMoveToPoint(context, (trianglesDict["2"]!["first"]!!["x"] as! CGFloat), (trianglesDict["2"]!["first"]!!["y"] as! CGFloat))
+            CGContextAddLineToPoint(context, (trianglesDict["2"]!["second"]!!["x"] as! CGFloat), (trianglesDict["2"]!["second"]!!["y"] as! CGFloat))
+            CGContextMoveToPoint(context, (trianglesDict["2"]!["second"]!!["x"] as! CGFloat), (trianglesDict["2"]!["second"]!!["y"] as! CGFloat))
+            CGContextAddLineToPoint(context, (trianglesDict["2"]!["third"]!!["x"] as! CGFloat), (trianglesDict["2"]!["third"]!!["y"] as! CGFloat))
+            CGContextMoveToPoint(context, (trianglesDict["2"]!["third"]!!["x"] as! CGFloat), (trianglesDict["2"]!["third"]!!["y"] as! CGFloat))
+            CGContextAddLineToPoint(context, (trianglesDict["2"]!["first"]!!["x"] as! CGFloat), (trianglesDict["2"]!["first"]!!["y"] as! CGFloat))
             
-            for key : AnyObject in trianglesDict.allKeys{
-                let stringKey: String = key as! String
-                if let _ : AnyObject = trianglesDict.valueForKey(stringKey) {
-                        
-                }
-                
-            }
-
+            CGContextMoveToPoint(context, (trianglesDict["3"]!["first"]!!["x"] as! CGFloat), (trianglesDict["3"]!["first"]!!["y"] as! CGFloat))
+            CGContextAddLineToPoint(context, (trianglesDict["3"]!["second"]!!["x"] as! CGFloat), (trianglesDict["3"]!["second"]!!["y"] as! CGFloat))
+            CGContextMoveToPoint(context, (trianglesDict["3"]!["second"]!!["x"] as! CGFloat), (trianglesDict["3"]!["second"]!!["y"] as! CGFloat))
+            CGContextAddLineToPoint(context, (trianglesDict["3"]!["third"]!!["x"] as! CGFloat), (trianglesDict["3"]!["third"]!!["y"] as! CGFloat))
+            CGContextMoveToPoint(context, (trianglesDict["3"]!["third"]!!["x"] as! CGFloat), (trianglesDict["3"]!["third"]!!["y"] as! CGFloat))
+            CGContextAddLineToPoint(context, (trianglesDict["3"]!["first"]!!["x"] as! CGFloat), (trianglesDict["3"]!["first"]!!["y"] as! CGFloat))
             
         }
           CGContextStrokePath(context)

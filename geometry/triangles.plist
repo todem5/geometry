@@ -55,23 +55,23 @@
 		<key>first</key>
 		<dict>
 			<key>x</key>
-			<integer>0</integer>
+			<integer>150</integer>
 			<key>y</key>
-			<integer>0</integer>
+			<integer>300</integer>
 		</dict>
 		<key>second</key>
 		<dict>
 			<key>x</key>
-			<integer>0</integer>
+			<integer>250</integer>
 			<key>y</key>
-			<integer>0</integer>
+			<integer>300</integer>
 		</dict>
 		<key>third</key>
 		<dict>
 			<key>x</key>
-			<integer>0</integer>
+			<integer>250</integer>
 			<key>y</key>
-			<integer>0</integer>
+			<integer>200</integer>
 		</dict>
 	</dict>
 </dict>
