@@ -8,11 +8,11 @@
 
 import UIKit
 
-class ViewController: UIViewController, TrianglesProtocol {
+class TrianglesViewController: UIViewController, TrianglesProtocol {
     private var trianglesDict: [String: AnyObject]?
     
-    @IBAction func loadTriangle(sender: UIButton) {
-        if let path = NSBundle.mainBundle().pathForResource("data2", ofType: "plist") {
+    @IBAction func loadTriangles(sender: UIButton) {
+        if let path = NSBundle.mainBundle().pathForResource("triangles", ofType: "plist") {
             if let dict = NSDictionary(contentsOfFile: path) as? Dictionary<String, AnyObject> {
                 trianglesDict = dict
             }
@@ -26,7 +26,7 @@ class ViewController: UIViewController, TrianglesProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        (self.view as! tView).setDataSource(self)
+        (self.view as! TrianglesView).setDataSource(self)
         // Do any additional setup after loading the view.
     }
    
