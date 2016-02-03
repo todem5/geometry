@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  TrianglesViewController
 //  geometry
 //
 //  Created by Dmitry Tolmachev on 30.11.15.
