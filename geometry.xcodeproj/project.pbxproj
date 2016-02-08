@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		280B150A1C15928900C69DC4 /* TrianglesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280B15091C15928900C69DC4 /* TrianglesProtocol.swift */; };
-		288A71491C2723FA00916D91 /* triangles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 288A71481C2723FA00916D91 /* triangles.plist */; };
+		284810231C5C837600C05D3E /* triangles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 284810221C5C837600C05D3E /* triangles.plist */; };
 		288A714B1C27240900916D91 /* TrianglesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A714A1C27240900916D91 /* TrianglesView.swift */; };
 		288A714D1C27240F00916D91 /* TrianglesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A714C1C27240F00916D91 /* TrianglesViewController.swift */; };
 		7D75BB0B1C061CC0009B7521 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D75BB0A1C061CC0009B7521 /* AppDelegate.swift */; };
@@ -38,7 +38,7 @@
 
 /* Begin PBXFileReference section */
 		280B15091C15928900C69DC4 /* TrianglesProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrianglesProtocol.swift; sourceTree = "<group>"; };
-		288A71481C2723FA00916D91 /* triangles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = triangles.plist; sourceTree = "<group>"; };
+		284810221C5C837600C05D3E /* triangles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = triangles.plist; sourceTree = "<group>"; };
 		288A714A1C27240900916D91 /* TrianglesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrianglesView.swift; sourceTree = "<group>"; };
 		288A714C1C27240F00916D91 /* TrianglesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrianglesViewController.swift; sourceTree = "<group>"; };
 		7D75BB071C061CC0009B7521 /* geometry.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = geometry.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +107,7 @@
 				288A714C1C27240F00916D91 /* TrianglesViewController.swift */,
 				288A714A1C27240900916D91 /* TrianglesView.swift */,
 				280B15091C15928900C69DC4 /* TrianglesProtocol.swift */,
-				288A71481C2723FA00916D91 /* triangles.plist */,
+				284810221C5C837600C05D3E /* triangles.plist */,
 				7D75BB0E1C061CC0009B7521 /* Main.storyboard */,
 				7D75BB111C061CC0009B7521 /* Assets.xcassets */,
 				7D75BB131C061CC0009B7521 /* LaunchScreen.storyboard */,
@@ -239,9 +239,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				7D75BB151C061CC0009B7521 /* LaunchScreen.storyboard in Resources */,
+				284810231C5C837600C05D3E /* triangles.plist in Resources */,
 				7D75BB121C061CC0009B7521 /* Assets.xcassets in Resources */,
 				7D75BB101C061CC0009B7521 /* Main.storyboard in Resources */,
-				288A71491C2723FA00916D91 /* triangles.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
