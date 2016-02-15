@@ -15,15 +15,13 @@ class TrianglesView: UIView {
         CGContextSetLineWidth(context, 3)
     
         if let trianglesDict = dataSource?.getTriangles(){
-    
-            var arr: [NSArray]
-            arr = trianglesDict as! [NSArray]
-        
             let lineOriginsCount = 3
-    
-            for n in 0...lineOriginsCount-1
+            var lineOrigins = [Int](count: lineOriginsCount,repeatedValue: 0)
+            CGContextMoveToPoint(context, lineOrigins[0], lineOrigins[1])
+            for n in 0...lineOriginsCount*2-1
             {
-                print("\(trianglesDict[n])")
+                lineOrigins[n] = trianglesDict[n]
+                CGContextAddLines(context, lineOrigins[n],lineOrigins[n+1], lineOriginsCount)
             }
             CGContextStrokePath(context)
         }
