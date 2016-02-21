@@ -7,7 +7,5 @@
 import Foundation
 
 protocol TrianglesProtocol {
-    func getTriangles() -> Array<AnyObject>?
-    
-    
+    func getTriangles() -> Array<AnyObject>
 }
