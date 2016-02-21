@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9060" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9051"/>
@@ -23,7 +23,7 @@
                                 <animations/>
                                 <state key="normal" title="Load"/>
                                 <connections>
-                                    <action selector="loadTriangles:" destination="BYZ-38-t0r" eventType="touchUpInside" id="w8F-ei-0b5"/>
+                                    <action selector="loadTriangles:" destination="BYZ-38-t0r" eventType="touchUpInside" id="vco-6U-iPI"/>
                                 </connections>
                             </button>
                         </subviews>
