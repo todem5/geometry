@@ -7,19 +7,19 @@
 import UIKit
 
 class TrianglesViewController: UIViewController, TrianglesProtocol {
-    private var trianglesDict: Array<Int>?
+    private var trianglesDict: Array<AnyObject>?
     
     @IBAction func loadTriangles(sender: UIButton) {
         if let path = NSBundle.mainBundle().pathForResource("triangles", ofType: "plist") {
             if let dict = NSArray(contentsOfFile: path)
             {
-                trianglesDict = dict as? Array<Int>
+                trianglesDict = dict as? Array<AnyObject>
             }
         }
         self.view.setNeedsDisplay()
     }
     
-    func getTriangles() -> Array<Int>? {
+    func getTriangles() -> Array<AnyObject>? {
         return trianglesDict
     }
     
