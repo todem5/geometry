@@ -36,17 +36,17 @@
 				<key>x</key>
 				<integer>50</integer>
 				<key>y</key>
-				<integer>50</integer>
+				<integer>100</integer>
 			</dict>
 			<dict>
 				<key>x</key>
-				<integer>100</integer>
+				<integer>120</integer>
 				<key>y</key>
-				<integer>50</integer>
+				<integer>100</integer>
 			</dict>
 			<dict>
 				<key>x</key>
-				<integer>100</integer>
+				<integer>120</integer>
 				<key>y</key>
 				<integer>150</integer>
 			</dict>

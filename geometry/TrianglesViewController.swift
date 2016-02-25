@@ -9,6 +9,11 @@ import UIKit
 class TrianglesViewController: UIViewController, TrianglesProtocol {
     private var triangles: Array<AnyObject> = []
 
+    @IBAction func settingbutton(sender: UIButton) {
+        
+        
+        func prepareForSegue(_ segue: UIStoryboardSegue, sender: AnyObject?)
+    }
     @IBAction func loadTriangles(sender: UIButton) {
         if let path = NSBundle.mainBundle().pathForResource("triangles", ofType: "plist") {
             triangles = (NSArray(contentsOfFile: path) as? Array<AnyObject>)!
@@ -25,4 +30,8 @@ class TrianglesViewController: UIViewController, TrianglesProtocol {
         super.viewDidLoad()
         (self.view as! TrianglesView).setDataSource(self)
     }
+    func performSegueWithIdentifier(identifier: "settingEdit",sender: AnyObject?){
+        
+    }
+    
 }
