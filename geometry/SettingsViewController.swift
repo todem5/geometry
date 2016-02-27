@@ -11,8 +11,10 @@ import UIKit
 class SettingsViewController: UIViewController
 {
 
-    @IBAction func doneButton(sender: UIBarButtonItem) {
-            //self.presentedViewController?.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func doneUnwindAction(unwindSeque: UIStoryboardSegue) {
+        if let tViewController = unwindSeque.sourceViewController as? SettingsViewController {
+            print ("unwind")
+        }
     }
     
     @IBOutlet weak var redcolor: UISlider! { didSet { UpdateUI() } }
@@ -28,6 +30,4 @@ class SettingsViewController: UIViewController
         UpdateUI()
         // Do any additional setup after loading the view.
     }
-
-    
 }
