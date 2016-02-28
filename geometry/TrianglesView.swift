@@ -8,12 +8,14 @@ import UIKit
 
 class TrianglesView: UIView {
     private var dataSource: TrianglesProtocol?
-
+    var redt: CGFloat = 0.0
+    var greent: CGFloat = 0.0
+    var bluet: CGFloat = 0.0
     override func drawRect(rect: CGRect) {
-        UIColor.greenColor().set()
+        
         let context = UIGraphicsGetCurrentContext()
         CGContextSetLineWidth(context, 3)
-
+        CGContextSetRGBStrokeColor(context, redt, greent, bluet, 1.0)
         let originsCount = 4
         var origins = [CGPoint](count: originsCount, repeatedValue: CGPointZero)
 
@@ -35,5 +37,20 @@ class TrianglesView: UIView {
 
     func setDataSource(dataSource: TrianglesProtocol) {
         self.dataSource = dataSource
+    }
+    func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        let settingsViewController = segue.destinationViewController as! SettingsViewController
+        settingsViewController.delegate = self
+        settingsViewController.red = redt
+        settingsViewController.green = greent
+        settingsViewController.blue = bluet
+    }
+}
+
+extension TrianglesView: SettingsViewControllerDelegate {
+    func settingsViewControllerFinished(settingsViewController: SettingsViewController) {
+        self.redt = settingsViewController.red
+        self.greent = settingsViewController.green
+        self.bluet = settingsViewController.blue
     }
 }

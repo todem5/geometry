@@ -8,7 +8,6 @@ import UIKit
 
 class TrianglesViewController: UIViewController, TrianglesProtocol {
     private var triangles: Array<AnyObject> = []
-
     @IBAction func settingbutton(sender: UIButton) {   }
     @IBAction func loadTriangles(sender: UIButton) {
         if let path = NSBundle.mainBundle().pathForResource("triangles", ofType: "plist") {
@@ -26,10 +25,4 @@ class TrianglesViewController: UIViewController, TrianglesProtocol {
         super.viewDidLoad()
         (self.view as! TrianglesView).setDataSource(self)
     }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
-    }
-    
-    
 }
