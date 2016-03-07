@@ -14,9 +14,10 @@ protocol SettingsViewControllerDelegate: class {
 
 class SettingsViewController: UIViewController
 {
-    var red: CGFloat = 0.0
-    var green: CGFloat = 0.0
-    var blue: CGFloat = 0.0
+    
+    var redsvc: CGFloat = 0.0
+    var greensvc: CGFloat = 0.0
+    var bluesvc: CGFloat = 0.0
     weak var delegate: SettingsViewControllerDelegate?
     
     @IBAction func close(sender: AnyObject) {
@@ -33,23 +34,24 @@ class SettingsViewController: UIViewController
     @IBOutlet weak var labelBlue: UILabel!
     
     @IBAction func colorChanged(sender: UISlider) {
-        red = CGFloat(redcolor.value / 255.0)
+        redsvc = CGFloat(redcolor.value / 255.0)
         labelRed.text = NSString(format: "%d", Int(redcolor.value)) as String
-        green = CGFloat(greencolor.value / 255.0)
+        greensvc = CGFloat(greencolor.value / 255.0)
         labelGreen.text = NSString(format: "%d", Int(greencolor.value)) as String
-        blue = CGFloat(bluecolor.value / 255.0)
+        bluesvc = CGFloat(bluecolor.value / 255.0)
         labelBlue.text = NSString(format: "%d", Int(bluecolor.value)) as String
         
-        func drawRect() {}
+        //drawPreview()
     }
+    
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        redcolor.value = Float(red * 255.0)
+        redcolor.value = Float(redsvc * 255.0)
         labelRed.text = NSString(format: "%d", Int(redcolor.value)) as String
-        greencolor.value = Float(green * 255.0)
+        greencolor.value = Float(greensvc * 255.0)
         labelGreen.text = NSString(format: "%d", Int(greencolor.value)) as String
-        bluecolor.value = Float(blue * 255.0)
+        bluecolor.value = Float(bluesvc * 255.0)
         labelBlue.text = NSString(format: "%d", Int(bluecolor.value)) as String
         
         //drawPreview()
@@ -58,7 +60,7 @@ class SettingsViewController: UIViewController
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //labelRed.text = NSString(format: "%d", Int(redsvc.value)) as String
         // Do any additional setup after loading the view.
     }
 }
