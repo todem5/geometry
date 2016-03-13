@@ -5,17 +5,20 @@
 //  Copyright © 2015 Al Digit. All rights reserved.
 
 import UIKit
+protocol DiceGameDelegate {
+    func getColor()
+}
 
-class TrianglesView: UIView  {
-    var redtv: CGFloat = 0
-    var greentv: CGFloat = 0
-    var bluetv: CGFloat = 0
+class TrianglesView: UIView, DiceGameDelegate  {
+    var redtv: DiceGameDelegate
+    var greentv: ColorProtocol?
+    var bluetv: ColorProtocol?
     
     private var dataSource: TrianglesProtocol?
     override func drawRect(rect: CGRect) {
         let context = UIGraphicsGetCurrentContext()
         CGContextSetLineWidth(context, 3)
-        CGContextSetRGBStrokeColor(context, redtv, greentv, bluetv, 1.0)
+        CGContextSetRGBStrokeColor(context, redtv as! CGFloat, greentv as! CGFloat, bluetv as! CGFloat, 1.0)
         let originsCount = 4
         var origins = [CGPoint](count: originsCount, repeatedValue: CGPointZero)
 
@@ -38,13 +41,10 @@ class TrianglesView: UIView  {
     func setDataSource(dataSource: TrianglesProtocol) {
         self.dataSource = dataSource
     }
-    
-}
-
-extension TrianglesView: SettingsViewControllerDelegate {
-    func settingsViewControllerFinished(settingsViewController: SettingsViewController) {
-        self.redtv = settingsViewController.redsvc
-        self.greentv = settingsViewController.greensvc
-        self.bluetv = settingsViewController.bluesvc
+    func setColorSource(redtv: ColorProtocol, greentv: ColorProtocol, bluetv: ColorProtocol){
+        self.redtv = redtv
+        self.greentv = greentv
+        self.bluetv = bluetv
     }
+    
 }

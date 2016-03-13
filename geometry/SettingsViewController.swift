@@ -8,21 +8,20 @@
 
 import UIKit
 
-protocol SettingsViewControllerDelegate: class {
-    func settingsViewControllerFinished(settingsViewController: SettingsViewController)
+protocol DiceGame: {
+    func getColor()
 }
 
-class SettingsViewController: UIViewController
+class SettingsViewController: UIViewController, DiceGame
 {
-    
     var redsvc: CGFloat = 0.0
     var greensvc: CGFloat = 0.0
     var bluesvc: CGFloat = 0.0
-    weak var delegate: SettingsViewControllerDelegate?
+    var delegate: DiceGameDelegate?
     
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-        self.delegate?.settingsViewControllerFinished(self)
+        delegate?.getColor(self)
     }
     
     @IBOutlet weak var redcolor: UISlider!
@@ -40,10 +39,7 @@ class SettingsViewController: UIViewController
         labelGreen.text = NSString(format: "%d", Int(greencolor.value)) as String
         bluesvc = CGFloat(bluecolor.value / 255.0)
         labelBlue.text = NSString(format: "%d", Int(bluecolor.value)) as String
-        
-        //drawPreview()
-    }
-    
+     }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
@@ -53,14 +49,10 @@ class SettingsViewController: UIViewController
         labelGreen.text = NSString(format: "%d", Int(greencolor.value)) as String
         bluecolor.value = Float(bluesvc * 255.0)
         labelBlue.text = NSString(format: "%d", Int(bluecolor.value)) as String
-        
-        //drawPreview()
     }
-       
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //labelRed.text = NSString(format: "%d", Int(redsvc.value)) as String
         // Do any additional setup after loading the view.
     }
 }
