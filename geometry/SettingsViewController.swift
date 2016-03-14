@@ -23,7 +23,7 @@ class SettingsViewController: UIViewController, TrianglesViewDataSource
     
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-        //delegate?.getColor(self)
+        delegate?.settingsViewControllerDelegate(self)
     }
     
     @IBOutlet weak var redСolor: UISlider!
@@ -51,7 +51,6 @@ class SettingsViewController: UIViewController, TrianglesViewDataSource
     @IBOutlet weak var trianglesView: TrianglesView! {
         didSet {
             trianglesView.dataSourceColor = self
-            //trianglesView.addGestureRecognizer(UIPinchGestureRecognizer(target: faceView, action: "scale:"))
         }
     }
     

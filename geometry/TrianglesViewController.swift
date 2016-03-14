@@ -47,7 +47,6 @@ class TrianglesViewController: UIViewController, TrianglesProtocol {
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        //navigationController?.delegate = self
     }
 }
 
