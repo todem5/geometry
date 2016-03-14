@@ -8,51 +8,64 @@
 
 import UIKit
 
-protocol DiceGame: {
-    func getColor()
+protocol SettingsViewControllerDelegate: class {
+    func settingsViewControllerDelegate(sender: SettingsViewController)
 }
 
-class SettingsViewController: UIViewController, DiceGame
+class SettingsViewController: UIViewController, TrianglesViewDataSource
 {
-    var redsvc: CGFloat = 0.0
-    var greensvc: CGFloat = 0.0
-    var bluesvc: CGFloat = 0.0
-    var delegate: DiceGameDelegate?
+    var redsvc = CGFloat()
+    var greensvc = CGFloat()
+    var bluesvc = CGFloat()
+    var colorRGB = [CGFloat]()
+    
+    weak var delegate: SettingsViewControllerDelegate?
     
     @IBAction func close(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)
-        delegate?.getColor(self)
+        //delegate?.getColor(self)
     }
     
-    @IBOutlet weak var redcolor: UISlider!
-    @IBOutlet weak var greencolor: UISlider!
-    @IBOutlet weak var bluecolor: UISlider! 
+    @IBOutlet weak var redСolor: UISlider!
+    @IBOutlet weak var greenСolor: UISlider!
+    @IBOutlet weak var blueСolor: UISlider!
     
     @IBOutlet weak var labelRed: UILabel!
     @IBOutlet weak var labelGreen: UILabel!
     @IBOutlet weak var labelBlue: UILabel!
     
     @IBAction func colorChanged(sender: UISlider) {
-        redsvc = CGFloat(redcolor.value / 255.0)
-        labelRed.text = NSString(format: "%d", Int(redcolor.value)) as String
-        greensvc = CGFloat(greencolor.value / 255.0)
-        labelGreen.text = NSString(format: "%d", Int(greencolor.value)) as String
-        bluesvc = CGFloat(bluecolor.value / 255.0)
-        labelBlue.text = NSString(format: "%d", Int(bluecolor.value)) as String
+        redsvc = CGFloat(redСolor.value / 255.0)
+        labelRed.text = NSString(format: "%d", Int(redСolor.value)) as String
+        greensvc = CGFloat(greenСolor.value / 255.0)
+        labelGreen.text = NSString(format: "%d", Int(greenСolor.value)) as String
+        bluesvc = CGFloat(blueСolor.value / 255.0)
+        labelBlue.text = NSString(format: "%d", Int(blueСolor.value)) as String
      }
+    
+    func getColor(sender: TrianglesView) -> [CGFloat]? {
+        colorRGB = [redsvc,greensvc,bluesvc]
+        return colorRGB
+    }
+    
+    @IBOutlet weak var trianglesView: TrianglesView! {
+        didSet {
+            trianglesView.dataSourceColor = self
+            //trianglesView.addGestureRecognizer(UIPinchGestureRecognizer(target: faceView, action: "scale:"))
+        }
+    }
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
-        redcolor.value = Float(redsvc * 255.0)
-        labelRed.text = NSString(format: "%d", Int(redcolor.value)) as String
-        greencolor.value = Float(greensvc * 255.0)
-        labelGreen.text = NSString(format: "%d", Int(greencolor.value)) as String
-        bluecolor.value = Float(bluesvc * 255.0)
-        labelBlue.text = NSString(format: "%d", Int(bluecolor.value)) as String
+        redСolor.value = Float(redsvc * 255.0)
+        labelRed.text = NSString(format: "%d", Int(redСolor.value)) as String
+        greenСolor.value = Float(greensvc * 255.0)
+        labelGreen.text = NSString(format: "%d", Int(greenСolor.value)) as String
+        blueСolor.value = Float(bluesvc * 255.0)
+        labelBlue.text = NSString(format: "%d", Int(blueСolor.value)) as String
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+        }
 }

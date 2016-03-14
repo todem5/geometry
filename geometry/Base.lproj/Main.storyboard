@@ -134,12 +134,12 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="bluecolor" destination="Z6k-Rq-Aos" id="r8h-NO-U8t"/>
-                        <outlet property="greencolor" destination="E7g-IQ-W57" id="fRd-lU-qHO"/>
+                        <outlet property="blueСolor" destination="Z6k-Rq-Aos" id="5cm-iW-SBF"/>
+                        <outlet property="greenСolor" destination="E7g-IQ-W57" id="hpF-NR-yXi"/>
                         <outlet property="labelBlue" destination="sAN-qm-vb9" id="U7p-K6-AsB"/>
                         <outlet property="labelGreen" destination="pY4-YW-5Ir" id="TiG-Q3-OJg"/>
                         <outlet property="labelRed" destination="Bie-6V-pS5" id="TsH-O8-Vx6"/>
-                        <outlet property="redcolor" destination="0e1-0y-kR8" id="a8w-Ne-egd"/>
+                        <outlet property="redСolor" destination="0e1-0y-kR8" id="hdE-x1-baB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gSJ-ce-crA" userLabel="First Responder" sceneMemberID="firstResponder"/>

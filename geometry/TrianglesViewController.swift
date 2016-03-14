@@ -6,7 +6,7 @@
 
 import UIKit
 
-class TrianglesViewController: UIViewController, TrianglesProtocol, ColorProtocol, SettingsViewControllerDelegate, , UINavigationControllerDelegate {
+class TrianglesViewController: UIViewController, TrianglesProtocol {
     private var triangles: Array<AnyObject> = []
     
     private var redtvc: CGFloat = 1.0
@@ -27,15 +27,12 @@ class TrianglesViewController: UIViewController, TrianglesProtocol, ColorProtoco
     func getTriangles() -> Array<AnyObject> {
         return triangles
     }
-    func getColor() -> Array<AnyObjects> {
-        return colors
-    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         (self.view as! TrianglesView).setDataSource(self)
-        (self.view as! TrianglesView).setColorSource(self, greentv: self, bluetv: self)
+        
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "editSetting" {
@@ -55,9 +52,9 @@ class TrianglesViewController: UIViewController, TrianglesProtocol, ColorProtoco
 }
 
 extension TrianglesViewController: SettingsViewControllerDelegate {
-    func settingsViewControllerFinished(settingsViewController: SettingsViewController) {
-        self.redtvc = settingsViewController.redsvc
-        self.greentvc = settingsViewController.greensvc
-        self.bluetvc = settingsViewController.bluesvc
+    func settingsViewControllerDelegate(sender: SettingsViewController) {
+        self.redtvc = sender.redsvc
+        self.greentvc = sender.greensvc
+        self.bluetvc = sender.bluesvc
     }
 }
