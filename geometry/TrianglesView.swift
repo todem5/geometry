@@ -19,12 +19,10 @@ class TrianglesView: UIView {
 
         for shape in dataSource!.getTriangles() {
             if let triangle = shape["points"] as? Array<Dictionary<String, Int>> {
-                for i in 0 ..< (originsCount - 1) {
-                    origins[i].x = CGFloat(triangle[i]["x"]!)
-                    origins[i].y = CGFloat(triangle[i]["y"]!)
+                for i in 0 ..< originsCount {
+                    origins[i].x = CGFloat(triangle[i % (originsCount - 1)]["x"]!)
+                    origins[i].y = CGFloat(triangle[i % (originsCount - 1)]["y"]!)
                 }
-                origins[originsCount - 1].x = CGFloat(triangle[0]["x"]!)
-                origins[originsCount - 1].y = CGFloat(triangle[0]["y"]!)
             }
 
             CGContextAddLines(context, origins, originsCount)
