@@ -6,16 +6,23 @@
 
 import UIKit
 
-class TrianglesViewController: UIViewController, TrianglesProtocol {
+class TrianglesViewController: UIViewController, TrianglesProtocol, TrianglesViewDataSource {
     private var triangles: Array<AnyObject> = []
     
-    private var redtvc: CGFloat = 1.0
-    private var greentvc: CGFloat = 1.0
-    private var bluetvc: CGFloat = 1.0
-    private var colors: [(CGFloat, CGFloat, CGFloat)] = [(0,0,0)]
+    private var redtvc = CGFloat() {didSet { updateUI()  } }
+    private var greentvc = CGFloat() {didSet { updateUI()  } }
+    private var bluetvc = CGFloat() {didSet { updateUI()  } }
+    private var colors = [CGFloat]()
+    
+    @IBOutlet weak var trianglesView: TrianglesView! {
+        didSet {
+            trianglesView.dataSourceColor = self
+        }
+    }
     
     @IBAction func settingbutton(sender: AnyObject) {
-        
+        //self.performSegueWithIdentifier("editSetting", sender: nil)
+        self.view.setNeedsDisplay() 
         }
     @IBAction func loadTriangles(sender: UIButton) {
         if let path = NSBundle.mainBundle().pathForResource("triangles", ofType: "plist") {
@@ -27,6 +34,14 @@ class TrianglesViewController: UIViewController, TrianglesProtocol {
     func getTriangles() -> Array<AnyObject> {
         return triangles
     }
+    func getColor(sender: TrianglesView) -> [CGFloat]? {
+        colors = [redtvc,greentvc,bluetvc]
+        return colors
+    }
+    func updateUI() {
+        trianglesView?.setNeedsDisplay()
+    }
+    
     
     override func viewDidLoad()
     {
@@ -42,11 +57,15 @@ class TrianglesViewController: UIViewController, TrianglesProtocol {
                 svc.redsvc = redtvc
                 svc.greensvc = greentvc
                 svc.bluesvc = bluetvc
+                
             }
         }
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+    }
+    func runSegue(identifier: String) {
+        self.performSegueWithIdentifier(identifier, sender: self)
     }
 }
 

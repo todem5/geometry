@@ -12,9 +12,9 @@ protocol SettingsViewControllerDelegate: class {
     func settingsViewControllerDelegate(sender: SettingsViewController)
 }
 
-class SettingsViewController: UIViewController, TrianglesViewDataSource
+class SettingsViewController: UIViewController
 {
-    var redsvc = CGFloat()
+    var redsvc = CGFloat()    
     var greensvc = CGFloat()
     var bluesvc = CGFloat()
     var colorRGB = [CGFloat]()
@@ -34,6 +34,9 @@ class SettingsViewController: UIViewController, TrianglesViewDataSource
     @IBOutlet weak var labelGreen: UILabel!
     @IBOutlet weak var labelBlue: UILabel!
     
+    
+    
+    
     @IBAction func colorChanged(sender: UISlider) {
         redsvc = CGFloat(redСolor.value / 255.0)
         labelRed.text = NSString(format: "%d", Int(redСolor.value)) as String
@@ -42,18 +45,7 @@ class SettingsViewController: UIViewController, TrianglesViewDataSource
         bluesvc = CGFloat(blueСolor.value / 255.0)
         labelBlue.text = NSString(format: "%d", Int(blueСolor.value)) as String
      }
-    
-    func getColor(sender: TrianglesView) -> [CGFloat]? {
-        colorRGB = [redsvc,greensvc,bluesvc]
-        return colorRGB
-    }
-    
-    @IBOutlet weak var trianglesView: TrianglesView! {
-        didSet {
-            trianglesView.dataSourceColor = self
-        }
-    }
-    
+   
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         redСolor.value = Float(redsvc * 255.0)
