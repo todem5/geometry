@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		280B150A1C15928900C69DC4 /* TrianglesProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 280B15091C15928900C69DC4 /* TrianglesProtocol.swift */; };
 		284810231C5C837600C05D3E /* triangles.plist in Resources */ = {isa = PBXBuildFile; fileRef = 284810221C5C837600C05D3E /* triangles.plist */; };
+		284D78A61CB2D15900E57AEE /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 284D78A51CB2D15900E57AEE /* Settings.swift */; };
 		288A714B1C27240900916D91 /* TrianglesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A714A1C27240900916D91 /* TrianglesView.swift */; };
 		288A714D1C27240F00916D91 /* TrianglesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 288A714C1C27240F00916D91 /* TrianglesViewController.swift */; };
 		28B82FA21C7A2E1A0012B5F0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28B82FA11C7A2E1A0012B5F0 /* SettingsViewController.swift */; };
@@ -40,6 +41,7 @@
 /* Begin PBXFileReference section */
 		280B15091C15928900C69DC4 /* TrianglesProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrianglesProtocol.swift; sourceTree = "<group>"; };
 		284810221C5C837600C05D3E /* triangles.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = triangles.plist; sourceTree = "<group>"; };
+		284D78A51CB2D15900E57AEE /* Settings.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		288A714A1C27240900916D91 /* TrianglesView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrianglesView.swift; sourceTree = "<group>"; };
 		288A714C1C27240F00916D91 /* TrianglesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TrianglesViewController.swift; sourceTree = "<group>"; };
 		28B82FA11C7A2E1A0012B5F0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -108,6 +110,7 @@
 				7D75BB0A1C061CC0009B7521 /* AppDelegate.swift */,
 				288A714C1C27240F00916D91 /* TrianglesViewController.swift */,
 				28B82FA11C7A2E1A0012B5F0 /* SettingsViewController.swift */,
+				284D78A51CB2D15900E57AEE /* Settings.swift */,
 				288A714A1C27240900916D91 /* TrianglesView.swift */,
 				280B15091C15928900C69DC4 /* TrianglesProtocol.swift */,
 				284810221C5C837600C05D3E /* triangles.plist */,
@@ -269,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				284D78A61CB2D15900E57AEE /* Settings.swift in Sources */,
 				280B150A1C15928900C69DC4 /* TrianglesProtocol.swift in Sources */,
 				288A714B1C27240900916D91 /* TrianglesView.swift in Sources */,
 				288A714D1C27240F00916D91 /* TrianglesViewController.swift in Sources */,
