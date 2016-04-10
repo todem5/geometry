@@ -1,5 +1,7 @@
 # folder logs
 project.pbxproj
+.build/
 
 # files
-UserInterfaceState.xcuserstate
+*.moved-aside*.xcuserstate
+*.hmap*.ipatimeline.xctimelineplayground.xcworkspace
