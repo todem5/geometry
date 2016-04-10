@@ -2,6 +2,7 @@
 project.pbxproj
 
 # files
+UserInterfaceState.xcuserstate
 *.moved-aside
 *.xcuserstate
 timeline.xctimeline
