@@ -6,14 +6,14 @@
 
 import UIKit
 protocol TrianglesViewDataSource: class {
-    func getColor(sender: TrianglesView) -> [Float]?
+    func getColor(sender: TrianglesView) -> [CGFloat]?
 }
 
 @IBDesignable
 class TrianglesView: UIView  {
     
     @IBInspectable
-    var colorRGB = [Float]() { didSet { setNeedsDisplay() } }
+    var colorRGB = [CGFloat]() { didSet { setNeedsDisplay() } }
         
     private var dataSource: TrianglesProtocol?
     
@@ -24,11 +24,7 @@ class TrianglesView: UIView  {
         CGContextSetLineWidth(context, 3)
         if let color = dataSourceColor?.getColor(self) {
             colorRGB = color
-            CGContextSetRGBStrokeColor(context,
-                                       CGFloat(colorRGB[0]),
-                                       CGFloat(colorRGB[1]),
-                                       CGFloat(colorRGB[2]),
-                                       1.0)
+            CGContextSetRGBStrokeColor(context, colorRGB[0], colorRGB[1], colorRGB[2], 1.0)
         } else {
             UIColor.greenColor().set()
         }
