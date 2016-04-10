@@ -15,7 +15,6 @@ protocol SettingsViewControllerDelegate: class {
 class SettingsViewController: UIViewController
 {
     var settings = Settings()
-    
     weak var delegate: SettingsViewControllerDelegate?
     
     @IBAction func close(sender: AnyObject) {
