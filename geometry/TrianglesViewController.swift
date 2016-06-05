@@ -52,7 +52,8 @@ class TrianglesViewController: UIViewController, SettingsViewControllerDelegate,
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "editSetting" {
-            let destinationVC = segue.destinationViewController as! SettingsViewController
+            let nav = segue.destinationViewController as! UINavigationController
+            let destinationVC = nav.topViewController as! SettingsViewController
             destinationVC.delegate = self
             destinationVC.redsvc = redtvc
             destinationVC.greensvc = greentvc

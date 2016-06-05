@@ -29,8 +29,8 @@ class SettingsViewController: UIViewController
     @IBOutlet weak var labelGreen: UILabel!
     @IBOutlet weak var labelBlue: UILabel!
     
-    @IBAction func close(sender: AnyObject) {
-        //dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func close(sender: UIButton) {
+        dismissViewControllerAnimated(true, completion: nil)
         let rColor = Float(redСolor.value / 255)
         let gColor = Float(greenСolor.value / 255)
         let bColor = Float(blueСolor.value / 255)
