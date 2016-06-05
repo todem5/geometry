@@ -107,8 +107,8 @@
 			children = (
 				7D75BB0A1C061CC0009B7521 /* AppDelegate.swift */,
 				288A714C1C27240F00916D91 /* TrianglesViewController.swift */,
-				28B82FA11C7A2E1A0012B5F0 /* SettingsViewController.swift */,
 				288A714A1C27240900916D91 /* TrianglesView.swift */,
+				28B82FA11C7A2E1A0012B5F0 /* SettingsViewController.swift */,
 				280B15091C15928900C69DC4 /* TrianglesProtocol.swift */,
 				284810221C5C837600C05D3E /* triangles.plist */,
 				7D75BB0E1C061CC0009B7521 /* Main.storyboard */,

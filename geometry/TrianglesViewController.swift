@@ -6,13 +6,11 @@
 
 import UIKit
 
-class TrianglesViewController: UIViewController, TrianglesProtocol, TrianglesViewDataSource {
+class TrianglesViewController: UIViewController, SettingsViewControllerDelegate, TrianglesProtocol, TrianglesViewDataSource {
     private var triangles: Array<AnyObject> = []
-    
-//    private var redtvc = CGFloat() {didSet { updateUI()  } }
-//    private var greentvc = CGFloat() {didSet { updateUI()  } }
-//    private var bluetvc = CGFloat() {didSet { updateUI()  } }
-//    private var colors = [CGFloat]()
+    var redtvc: Float = 0.0
+    var greentvc: Float = 0.0
+    var bluetvc: Float = 0.0
     
     @IBOutlet weak var trianglesView: TrianglesView! {
         didSet {
@@ -33,28 +31,34 @@ class TrianglesViewController: UIViewController, TrianglesProtocol, TrianglesVie
     func getTriangles() -> Array<AnyObject> {
         return triangles
     }
+    
+    func fillSettingsViewControllerDelegate(rColor: Float, gColor: Float, bColor: Float) {
+        redtvc = rColor
+        greentvc = gColor
+        bluetvc = bColor
+    }
+    
     func getColor(sender: TrianglesView) -> [Float]? {
-        let settings = Settings.sharedInstance
-        return [settings.red,settings.green,settings.blue]
+        return [redtvc,greentvc,bluetvc]
     }
     func updateUI() {
         trianglesView?.setNeedsDisplay()
     }
-    
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
         (self.view as! TrianglesView).setDataSource(self)
     }
-//    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-//        if segue.identifier == "editSetting" {
-//        let destination = segue.destinationViewController
-//            if let svc = destination as? SettingsViewController {
-//                svc.settings = Settings
-//            }
-//        }
-//    }
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "editSetting" {
+            let destinationVC = segue.destinationViewController as! SettingsViewController
+            destinationVC.delegate = self
+            destinationVC.redsvc = redtvc
+            destinationVC.greensvc = greentvc
+            destinationVC.bluesvc = bluetvc            
+        }
+    }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
     }
