@@ -39,7 +39,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Load"/>
                                 <connections>
-                                    <action selector="loadTriangles:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ajj-S0-PoG"/>
+                                    <action selector="onLoad:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yGd-Pb-bY0"/>
                                 </connections>
                             </button>
                         </barButtonItem>

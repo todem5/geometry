@@ -17,21 +17,21 @@ class TrianglesViewController: UIViewController, SettingsViewControllerDelegate,
             trianglesView.dataSourceColor = self
         }
     }
-    
     @IBAction func settingbutton(sender: AnyObject) {
-        self.view.setNeedsDisplay()
     }
-    @IBAction func loadTriangles(sender: UIButton) {
+    @IBAction func onLoad(sender: UIButton) {
+        loadTriangles()
+    }
+    
+    func loadTriangles() {
         if let path = NSBundle.mainBundle().pathForResource("triangles", ofType: "plist") {
             triangles = (NSArray(contentsOfFile: path) as? Array<AnyObject>)!
         }
-        self.view.setNeedsDisplay()
     }
-
+    
     func getTriangles() -> Array<AnyObject> {
         return triangles
     }
-    
     func fillSettingsViewControllerDelegate(rColor: Float, gColor: Float, bColor: Float) {
         redtvc = rColor
         greentvc = gColor
@@ -41,13 +41,11 @@ class TrianglesViewController: UIViewController, SettingsViewControllerDelegate,
     func getColor(sender: TrianglesView) -> [Float]? {
         return [redtvc,greentvc,bluetvc]
     }
-    func updateUI() {
-        trianglesView?.setNeedsDisplay()
-    }
     
     override func viewDidLoad()
     {
         super.viewDidLoad()
+        loadTriangles()
         (self.view as! TrianglesView).setDataSource(self)
     }
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -62,13 +60,6 @@ class TrianglesViewController: UIViewController, SettingsViewControllerDelegate,
     }
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        self.view.setNeedsDisplay()
     }
 }
-
-//extension TrianglesViewController: SettingsViewControllerDelegate {
-//    func settingsViewControllerDelegate(sender: SettingsViewController) {
-//        self.redtvc = sender.redsvc
-//        self.greentvc = sender.greensvc
-//        self.bluetvc = sender.bluesvc
-//    }
-//}
