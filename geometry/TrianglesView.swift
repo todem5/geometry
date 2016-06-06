@@ -9,10 +9,8 @@ protocol TrianglesViewDataSource: class {
     func getColor(sender: TrianglesView) -> [Float]?
 }
 
-@IBDesignable
 class TrianglesView: UIView  {
     
-    @IBInspectable
     var colorRGB = [Float]() { didSet { setNeedsDisplay() } }
         
     private var dataSource: TrianglesProtocol?
