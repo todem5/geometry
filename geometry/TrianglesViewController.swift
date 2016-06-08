@@ -19,10 +19,7 @@ class TrianglesViewController: UIViewController, SettingsViewControllerDelegate,
     }
     @IBAction func settingbutton(sender: AnyObject) {
     }
-    @IBAction func onLoad(sender: UIButton) {
-        loadTriangles()
-    }
-    
+        
     func loadTriangles() {
         if let path = NSBundle.mainBundle().pathForResource("triangles", ofType: "plist") {
             triangles = (NSArray(contentsOfFile: path) as? Array<AnyObject>)!
@@ -32,7 +29,7 @@ class TrianglesViewController: UIViewController, SettingsViewControllerDelegate,
     func getTriangles() -> Array<AnyObject> {
         return triangles
     }
-    func fillSettingsViewControllerDelegate(rColor: Float, gColor: Float, bColor: Float) {
+    func setColor(rColor: Float, gColor: Float, bColor: Float) {
         redtvc = rColor
         greentvc = gColor
         bluetvc = bColor

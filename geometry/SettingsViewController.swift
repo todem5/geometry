@@ -9,13 +9,11 @@
 import UIKit
 
 protocol SettingsViewControllerDelegate {
-    func fillSettingsViewControllerDelegate(rColor: Float, gColor: Float, bColor: Float)
+    func setColor(rColor: Float, gColor: Float, bColor: Float)
 }
 
 class SettingsViewController: UIViewController
 {
-    //var settings = Settings()
-    
     var delegate: SettingsViewControllerDelegate?
     var redsvc = Float()
     var greensvc = Float()
@@ -34,10 +32,9 @@ class SettingsViewController: UIViewController
         let rColor = Float(redСolor.value / 255)
         let gColor = Float(greenСolor.value / 255)
         let bColor = Float(blueСolor.value / 255)
-        delegate?.fillSettingsViewControllerDelegate(rColor,gColor: gColor,bColor: bColor)
+        delegate?.setColor(rColor, gColor: gColor, bColor: bColor)
         navigationController?.popViewControllerAnimated(true)
     }
-    
     
     @IBAction func colorChanged(sender: UISlider) {
         redsvc = Float(redСolor.value / 255)
@@ -46,7 +43,7 @@ class SettingsViewController: UIViewController
         labelGreen.text = NSString(format: "%d", Int(greenСolor.value)) as String
         bluesvc = Float(blueСolor.value / 255)
         labelBlue.text = NSString(format: "%d", Int(blueСolor.value)) as String
-     }
+    }
    
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)

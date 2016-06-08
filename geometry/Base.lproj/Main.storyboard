@@ -22,24 +22,13 @@
                     <navigationItem key="navigationItem" id="daA-fc-wVC">
                         <barButtonItem key="leftBarButtonItem" style="plain" id="vkl-Zu-pQj">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="T7h-MZ-T5K">
-                                <rect key="frame" x="20" y="7" width="133" height="30"/>
+                                <rect key="frame" x="20" y="7" width="70" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Settings"/>
                                 <connections>
                                     <action selector="settingbutton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TFx-fe-ZMT"/>
                                     <segue destination="ZsB-Ja-x3A" kind="modal" identifier="editSetting" modalTransitionStyle="coverVertical" id="RTr-oz-DJ8"/>
-                                </connections>
-                            </button>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="b8v-ii-Qp2">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="fRC-SF-ktM">
-                                <rect key="frame" x="518" y="7" width="62" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Load"/>
-                                <connections>
-                                    <action selector="onLoad:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yGd-Pb-bY0"/>
                                 </connections>
                             </button>
                         </barButtonItem>

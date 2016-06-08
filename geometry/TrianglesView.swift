@@ -35,9 +35,9 @@ class TrianglesView: UIView  {
 
         for shape in dataSource!.getTriangles() {
             if let triangle = shape["points"] as? Array<Dictionary<String, Int>> {
-                for i in 0 ..< (originsCount - 1) {
-                    origins[i].x = CGFloat(triangle[i % (originsCount - 1)]["x"]!)
-                    origins[i].y = CGFloat(triangle[i % (originsCount - 1)]["y"]!)
+                for i in 0 ..< (originsCount) {
+                    origins[i].x = CGFloat(triangle[i % (originsCount-1)]["x"]!)
+                    origins[i].y = CGFloat(triangle[i % (originsCount-1)]["y"]!)
                 }
             }
 
